@@ -1,4 +1,4 @@
-# Sample Apollo Server Project
+# RSS dumper GraphQL
 
 ## Tech Stack
 
