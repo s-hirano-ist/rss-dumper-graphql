@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
     "start": "node dist/server",
-    "build": "npm -s run clean && npm -s run generate && tsc",    
+    "build": "npm -s run clean && npm -s run generate && tsc",
     "check:types": "tsc --noEmit",
     "fmt": "prettier --check .",
     "fmt:fix": "prettier --write .",
