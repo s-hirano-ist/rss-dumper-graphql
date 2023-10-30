@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
     "start": "node dist/server",
+    "clean": "rm -rf ./dist",
     "build": "npm -s run clean && npm -s run generate && tsc",
     "check:types": "tsc --noEmit",
     "fmt": "prettier --check .",
@@ -20,7 +21,7 @@
     "prisma:dev": "run-s -l prisma:generate prisma:migrate prisma:seed",
     "prisma:studio": "prisma studio",
     "postinstall": "prisma generate",
-    "generate": "npm -s run prisma:generate && npm -s run nexus:nexus"
+    "generate": "npm -s run prisma:generate && npm -s run nexus:generate"
   },
   "prisma": {
     "seed": "ts-node --transpile-only prisma/seed.ts"
