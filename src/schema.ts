@@ -21,6 +21,7 @@ const NewsDetail = objectType({
     t.string("quote");
     t.nonNull.boolean("published");
     t.nonNull.boolean("favorite");
+    t.nonNull.int("newsId");
   },
 });
 
