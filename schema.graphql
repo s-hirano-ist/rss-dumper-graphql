@@ -13,6 +13,7 @@ type News {
 type NewsDetail {
   favorite: Boolean!
   id: Int!
+  newsId: Int!
   published: Boolean!
   quote: String
   title: String!
