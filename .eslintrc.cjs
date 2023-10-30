@@ -36,11 +36,6 @@ module.exports = {
         "newlines-between": "never",
       },
     ],
-    // FIXME: delete
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/no-misused-promises": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-explicit-any": "off",
   },
   root: true,
   settings: {

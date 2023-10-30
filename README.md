@@ -2,63 +2,18 @@
 
 ## Tech Stack
 
-**GraphQL Server** - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+**GraphQL Server** - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)  
+**GraphQL Schema Definition** - [GraphQL Nexus](https://nexusjs.org/docs/)  
+**ORM** - [Prisma](https://www.prisma.io/docs/)  
+**Database** - [PostgreSQL](https://www.postgresql.org/docs/)
 
 ## References
 
 > https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nexus
 
-# GraphQL Server Example
-
-This example shows how to implement a **GraphQL server with TypeScript** with the following stack:
-
-- [**Apollo Server**](https://github.com/apollographql/apollo-server): HTTP server for GraphQL APIs
-- [**GraphQL Nexus**](https://nexusjs.org/docs/): GraphQL schema definition and resolver implementation
-- [**Prisma Client**](https://www.prisma.io/docs/concepts/components/prisma-client): Databases access (ORM)
-- [**Prisma Migrate**](https://www.prisma.io/docs/concepts/components/prisma-migrate): Database migrations
-- [**SQLite**](https://www.sqlite.org/index.html): Local, file-based SQL database
-
-## Contents
-
-- [Getting Started](#getting-started)
-- [Using the GraphQL API](#using-the-graphql-api)
-- [Evolving the app](#evolving-the-app)
-- [Switch to another database (e.g. PostgreSQL, MySQL, SQL Server)](#switch-to-another-database-eg-postgresql-mysql-sql-server)
-- [Next steps](#next-steps)
-
 ## Getting started
 
 ### 1. Download example and install dependencies
-
-Download this example:
-
-```
-npx try-prisma@latest --template typescript/graphql-nexus
-```
-
-Install npm dependencies:
-
-```
-cd graphql-nexus
-npm install
-```
-
-<details><summary><strong>Alternative:</strong> Clone the entire repo</summary>
-
-Clone this repository:
-
-```
-git clone git@github.com:prisma/prisma-examples.git --depth=1
-```
-
-Install npm dependencies:
-
-```
-cd prisma-examples/typescript/graphql
-npm install
-```
-
-</details>
 
 ### 2. Create and seed the database
 

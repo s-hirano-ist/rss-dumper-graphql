@@ -1,72 +1,66 @@
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
+/* eslint no-restricted-imports: off */
+import data1 from "./sampleData/AI.json";
+import data2 from "./sampleData/education.json";
+import data3 from "./sampleData/innovation.json";
+import data4 from "./sampleData/interesting.json";
 
 const prisma = new PrismaClient();
 
-const userData: Prisma.UserCreateInput[] = [
-  {
-    name: "Alice",
-    email: "alice@prisma.io",
-    posts: {
-      create: [
-        {
-          title: "Join the Prisma Slack",
-          content: "https://slack.prisma.io",
-          published: true,
-        },
-      ],
-    },
-  },
-  {
-    name: "Nilu",
-    email: "nilu@prisma.io",
-    posts: {
-      create: [
-        {
-          title: "Follow Prisma on Twitter",
-          content: "https://www.twitter.com/prisma",
-          published: true,
-          viewCount: 42,
-        },
-      ],
-    },
-  },
-  {
-    name: "Mahmoud",
-    email: "mahmoud@prisma.io",
-    posts: {
-      create: [
-        {
-          title: "Ask a question about Prisma on GitHub",
-          content: "https://www.github.com/prisma/prisma/discussions",
-          published: true,
-          viewCount: 128,
-        },
-        {
-          title: "Prisma on YouTube",
-          content: "https://pris.ly/youtube",
-        },
-      ],
-    },
-  },
-];
-
 async function main() {
-  console.log(`Start seeding ...`);
-  for (const u of userData) {
-    const user = await prisma.user.create({
-      data: u,
+  try {
+    // UPSERT: if already exists then update, otherwise create
+    await prisma.news.upsert({
+      where: { id: 1 },
+      update: {},
+      create: {
+        heading: data1.heading,
+        description: data1.description,
+        newsDetail: {
+          create: data1.body,
+        },
+      },
     });
-    console.log(`Created user with id: ${user.id}`);
-  }
-  console.log(`Seeding finished.`);
-}
-
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async e => {
+    await prisma.news.upsert({
+      where: { id: 2 },
+      update: {},
+      create: {
+        heading: data2.heading,
+        description: data2.description,
+        newsDetail: {
+          create: data2.body,
+        },
+      },
+    });
+    await prisma.news.upsert({
+      where: { id: 3 },
+      update: {},
+      create: {
+        heading: data3.heading,
+        description: data3.description,
+        newsDetail: {
+          create: data3.body,
+        },
+      },
+    });
+    await prisma.news.upsert({
+      where: { id: 4 },
+      update: {},
+      create: {
+        heading: data4.heading,
+        description: data4.description,
+        newsDetail: {
+          create: data4.body,
+        },
+      },
+    });
+    console.log("added sample data to the database");
+  } catch (e) {
     console.error(e);
-    await prisma.$disconnect();
     process.exit(1);
-  });
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+main();

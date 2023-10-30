@@ -1,2 +1,4 @@
 build/*
 pnpm-lock.yaml
+schema.graphql
+
