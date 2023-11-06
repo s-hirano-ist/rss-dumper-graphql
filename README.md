@@ -1,4 +1,4 @@
-# RSS dumper GraphQL
+# RSS Dumper GraphQL
 
 ## Tech Stack
 
