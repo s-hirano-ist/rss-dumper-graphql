@@ -1,6 +1,6 @@
 {
   "name": "rss-dumper-graphql",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "rss dumper graphql",
   "author": "Soraki Hirano",
   "packageManager": "pnpm@8.9.2",
