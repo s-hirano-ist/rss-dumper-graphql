@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "rss dumper graphql",
   "author": "Soraki Hirano",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.5",
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
     "start": "node dist/server",
