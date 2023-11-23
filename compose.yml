@@ -14,7 +14,6 @@ services:
       POSTGRES_USER: ${USERNAME}
       POSTGRES_PASSWORD: ${PASSWORD}
       POSTGRES_DB: rss-graphql-db
-    restart: always
   server:
     container_name: rss-graphql-server
     build:
@@ -22,5 +21,7 @@ services:
       dockerfile: server.Dockerfile
     ports:
       - 4000:4000
+    profiles:
+      - app
 volumes:
   rss-graphql-db-data:
