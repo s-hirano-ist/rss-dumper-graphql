@@ -1,6 +1,7 @@
 {
-  "heading": "education",
+  "heading": "education (ADMIN)",
   "description": "教育について",
+  "scope": "ADMIN",
   "body": [
     {
       "title": "家庭内プロジェクトマネジメント",

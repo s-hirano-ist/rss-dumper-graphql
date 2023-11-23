@@ -2,12 +2,23 @@
 ### Do not make changes to this file directly
 
 
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type Mutation {
+  login(email: String!, password: String!): AuthPayload
+  register(email: String!, name: String!, password: String!): AuthPayload
+}
+
 """News category for rss database"""
 type News {
   description: String!
   heading: String!
   id: Int!
   newsDetail: [NewsDetail!]!
+  scope: scope
 }
 
 type NewsDetail {
@@ -23,4 +34,20 @@ type NewsDetail {
 type Query {
   allNews: [News!]!
   allNewsDetail: [NewsDetail!]!
+  allUsers: [User!]!
+  publicNews: [News!]!
+  singleUser: User
+}
+
+type User {
+  admin: Boolean!
+  email: String!
+  id: Int!
+  name: String!
+}
+
+enum scope {
+  ADMIN
+  AUTHENTICATED
+  PUBLIC
 }

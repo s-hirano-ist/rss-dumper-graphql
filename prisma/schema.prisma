@@ -18,6 +18,7 @@ model News {
   id          Int          @id @default(autoincrement())
   heading     String       @unique
   description String
+  scope       Scope        @default(PUBLIC)
   newsDetail  NewsDetail[]
 
   @@map("news")
@@ -35,4 +36,18 @@ model NewsDetail {
   newsId    Int     @map("news_id")
 
   @@map("news_detail")
+}
+
+enum Scope {
+  PUBLIC
+  AUTHENTICATED
+  ADMIN
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  admin    Boolean @default(false) // this should only be manually changed
 }

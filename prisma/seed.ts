@@ -1,9 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 /* eslint no-restricted-imports: off */
-import data1 from "./sampleData/AI.json";
-import data2 from "./sampleData/education.json";
-import data3 from "./sampleData/innovation.json";
-import data4 from "./sampleData/interesting.json";
+import publicData from "./sampleData/public.json";
+import authenticatedData from "./sampleData/authenticated.json";
+import adminData from "./sampleData/admin.json";
 
 const prisma = new PrismaClient();
 
@@ -14,10 +13,11 @@ async function main() {
       where: { id: 1 },
       update: {},
       create: {
-        heading: data1.heading,
-        description: data1.description,
+        heading: publicData.heading,
+        description: publicData.description,
+        scope: publicData.scope,
         newsDetail: {
-          create: data1.body,
+          create: publicData.body,
         },
       },
     });
@@ -25,10 +25,11 @@ async function main() {
       where: { id: 2 },
       update: {},
       create: {
-        heading: data2.heading,
-        description: data2.description,
+        heading: authenticatedData.heading,
+        description: authenticatedData.description,
+        scope: authenticatedData.scope,
         newsDetail: {
-          create: data2.body,
+          create: authenticatedData.body,
         },
       },
     });
@@ -36,21 +37,11 @@ async function main() {
       where: { id: 3 },
       update: {},
       create: {
-        heading: data3.heading,
-        description: data3.description,
+        heading: adminData.heading,
+        description: adminData.description,
+        scope: adminData.scope,
         newsDetail: {
-          create: data3.body,
-        },
-      },
-    });
-    await prisma.news.upsert({
-      where: { id: 4 },
-      update: {},
-      create: {
-        heading: data4.heading,
-        description: data4.description,
-        newsDetail: {
-          create: data4.body,
+          create: adminData.body,
         },
       },
     });
