@@ -35,6 +35,12 @@ Start command
 pnpm start
 ```
 
+Use docker
+
+```bash
+docker compose --profile app up -d
+```
+
 ## 🍾 Initial setups
 
 ```bash
