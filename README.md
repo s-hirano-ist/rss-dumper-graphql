@@ -63,21 +63,16 @@ pnpm prisma:dev
 ```graphql
 mutation {
   register(
-    email: "sorakihirano2@gmail.com"
-    password: "SamplePassword!1234"
-    name: "Sample Taro"
+    email: "example@gmail.com"
+    password: "PASSWORD"
+    name: "Example Taro"
   ) {
     token
   }
 }
 
 mutation {
-  login(email: "solucky0725@icloud.com", password: "XXX") {
-    token
-  }
-}
-mutation {
-  login(email: "sorakihirano2@gmail.com", password: "SamplePassword!1234") {
+  login(email: "example@gmail.com", password: "PASSWORD") {
     token
   }
 }

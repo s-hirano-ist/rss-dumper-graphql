@@ -3,6 +3,8 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { Context, createContext } from "./context";
 import { schema } from "./schema";
 
+// FYR: it might be better to use expressMiddleware instead of startStandaloneServer for security issues.
+// https://www.apollographql.com/docs/apollo-server/api/standalone#swapping-to-expressmiddleware
 const PORT = Number(process.env.PORT);
 
 const start = async () => {
