@@ -13,10 +13,7 @@ const start = async () => {
     listen: { port: isNaN(PORT) ? 4000 : PORT },
   });
 
-  console.log(`\
-  🚀 Server ready at: ${url}
-  ⭐️ See sample queries: http://pris.ly/e/ts/graphql-nexus#using-the-graphql-api
-  `);
+  console.log(`🚀 Server ready at: ${url}`);
 };
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises

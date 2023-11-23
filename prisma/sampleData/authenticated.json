@@ -1,6 +1,7 @@
 {
-  "heading": "interesting",
+  "heading": "interesting (AUTHENTICATED)",
   "description": "興味深い記事",
+  "scope": "AUTHENTICATED",
   "body": [
     {
       "title": "サハラ砂漠をソーラーパネルで覆うとどうなるのか",

@@ -2,11 +2,14 @@ import { PrismaClient } from "@prisma/client";
 
 export type Context = {
   prisma: PrismaClient;
+  req: any; // HTTP request carrying the `Authorization` header
 };
 
 const prisma = new PrismaClient();
 
-// eslint-disable-next-line @typescript-eslint/require-await
-export const createContext = async () => ({
-  prisma,
-});
+export function createContext(req: any) {
+  return {
+    ...req,
+    prisma,
+  };
+}

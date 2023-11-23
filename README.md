@@ -58,6 +58,48 @@ pnpm prisma:dev
 - Schema of "News" is defined by nexus-prisma (preferred)
 - Schema of "NewsDetail" is defined hardcode
 
+## Sample queries
+
+```graphql
+mutation {
+  register(
+    email: "sorakihirano2@gmail.com"
+    password: "SamplePassword!1234"
+    name: "Sample Taro"
+  ) {
+    token
+  }
+}
+
+mutation {
+  login(email: "solucky0725@icloud.com", password: "XXX") {
+    token
+  }
+}
+mutation {
+  login(email: "sorakihirano2@gmail.com", password: "SamplePassword!1234") {
+    token
+  }
+}
+
+query Query {
+  allNews {
+    heading
+    description
+  }
+  me {
+    email
+    admin
+  }
+  allUsers {
+    email
+    id
+    name
+    admin
+  }
+}
+```
+
 ## 🪝 Tags
 
 ```bash
@@ -68,3 +110,5 @@ git push origin vx.x.x
 ## References
 
 > https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-nexus
+>
+> https://github.com/prisma/prisma-examples/tree/latest/typescript/graphql-auth
