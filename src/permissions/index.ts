@@ -7,7 +7,7 @@ const rules = {
     const userId = getUserId(context);
     return Boolean(userId);
   }),
-  admin: rule()(async (_parent, args, context: Context) => {
+  admin: rule()(async (_parent, _args, context: Context) => {
     const userId = getUserId(context);
     const user = await context.prisma.user.findUnique({
       where: {
