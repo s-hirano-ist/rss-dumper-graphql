@@ -95,11 +95,10 @@ query Query {
 }
 ```
 
-## 🪝 Tags
+## 🪝 Tags & Realease
 
 ```bash
-git tag vx.x.x
-git push origin vx.x.x
+gh release create --generate-notes
 ```
 
 ## References
