@@ -1,5 +1,7 @@
 # RSS Dumper GraphQL
 
+Sample Apollo server for studying backend GraphQL server.
+
 ## Tech Stack
 
 **Language** - [TypeScript](https://www.typescriptlang.org/)  
