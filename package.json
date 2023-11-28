@@ -2,7 +2,7 @@
   "name": "rss-dumper-graphql",
   "version": "1.0.0",
   "description": "rss dumper graphql",
-  "author": "Soraki Hirano",
+  "author": "s-hirano-ist",
   "packageManager": "pnpm@8.11.0",
   "scripts": {
     "dev": "ts-node-dev --no-notify --respawn --transpile-only src/server",
