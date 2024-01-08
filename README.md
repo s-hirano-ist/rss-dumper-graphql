@@ -2,6 +2,9 @@
 
 Sample Apollo server for studying backend GraphQL server.
 
+More high-level implementation is located [here](https://github.com/pre-GMO/backend) (Sorry for a private repository).
+Therefore, there will be no updates here.
+
 ## Tech Stack
 
 **Language** - [TypeScript](https://www.typescriptlang.org/)  
